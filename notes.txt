@@ -1,0 +1,79 @@
+
+
+1)  Creating project: 
+    django-admin startproject %name of the project% . 
+
+    django-admin startapp %name of the app%
+
+2)  Django Project:
+    python manage.py runserver   
+
+    python manage.py migrate          // This is actually ADDING all data from 'Migrations' folder to DataBase
+
+    python manage.py startapp %name%  // Creating new app (appname)
+
+    python manage.py makemigrations   // its creating Model inside of 'Migrations' folder. (its not adding anything to DB)
+
+    python manage.py createsuperuser  // creating admin user in Django. 
+
+    python manage.py flush            // Cleaning DB and Users 
+
+    python manage.py drf_create_token %admin%  // generating token for existing User (Username)
+
+
+3) GIT:
+    git init
+    git add .
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/NeoVic2006/GRM_project.git
+    git push -u origin main
+
+    git pull origin master
+
+    git pull %remotename% %branchname%
+
+    git pull origin %branchname% --allow-unrelated-histories     // If you see error: "fatal: refusing to merge unrelated histories"
+
+a) If some folder is not ignoring in git use this command for file of folder:
+    git rm -r --cached <folder>
+
+
+
+4) Pytests:
+    ctrl shift P -> then type "test" choose proper settings for integration of VCS tests to project
+    
+    pytest --cov=. --cov-report=html   # Creating folder with report. Clock on index.html and you can see all details about tests. 
+
+
+5) VENV 
+
+    python -m venv env
+    cmd /c "env\Scripts\activate.bat"
+    pip install -r requirement.txt
+    python manage.py test
+    cmd /c "env\Scripts\deactivate.bat"
+
+    2) HOw to save app to requirements:
+
+     pip freeze > .\requirement.txt
+
+
+6) Jenkins:
+
+    how to remove completly from PC:
+
+    Open Windows Control Panel and click Programs and Features
+    Right-click Jenkins x.xxx.x (where x.xxx.x, is the Jenkins version), and select Uninstall.
+    Follow the directions.
+    When done, delete the following folders: (note: DO NOT remove the jenkins.jenkins or jenkinswar folders if you want to keep the projects and plugins.)
+
+    C:\Program Files\Jenkins or C:\Program Files(x86)\Jenkins 
+    C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins.jenkins 
+    C:\Windows\System32\config\systemprofile\AppData\Local\Jenkinswar
+    
+    Restart the computer.
+
+
+7) For migration to postgreSQL you need also install:
+    pip install psycopg2-binary
